@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* Monstrosity Child Theme */
+/* Theme Designed and Scripted by Anomalous */
+/* http://www.anomalous.co.za */
+/* 29 July 2013 */
+
+body {
+	padding-top: 60px;
+}
+.admin-bar .navbar { margin-top: 28px;}
+.center {text-align: center; margin-left: auto; margin-right: auto; margin-bottom: auto; margin-top: auto;}
+
+@media (min-width: 1200px) { 
+	/* Large Devices Desktop */
+}
+
+@media (min-width: 992px) and (max-width: 1200px) { 
+	/* Medium Devices Desktop */
+ }
+
+@media (min-width: 768px) and (max-width: 992px) { 
+	/* Small Devices Tablet */
+ }
+
+@media (max-width: 768px) {
+	/* Extra Small devices phone */
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+   /* Portrait Tablet Only If Needed */
+}
+ 
+@media (min-width: 321px) and (max-width: 480px) {
+    /* Landscape Phone Only If Needed */
+}
+ 
+@media (max-width: 320px) {
+    /* Portrait Phone Only If Needed */
+}
+/* Last Line of Code */
