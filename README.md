@@ -1,2 +1,2 @@
-# Anompress
+# Bootpress
 Bootstrap Base Theme
