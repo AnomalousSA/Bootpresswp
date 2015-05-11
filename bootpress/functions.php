@@ -3,14 +3,14 @@
  *
  * @package WordPress
  * @subpackage Anompress
- * @since Anompress 0.1
+ * @since Bootpress 0.1
  *
  * Last Revised: May 08, 2015
  */
-if ( ! function_exists('anompress_theme_features') ) {
+if ( ! function_exists('bootpress_theme_features') ) {
 
 // Register Theme Features
-function anompress_theme_features()  {
+function bootpress_theme_features()  {
 
 	// Add theme support for Automatic Feed Links
 	add_theme_support( 'automatic-feed-links' );
@@ -42,7 +42,7 @@ function anompress_theme_features()  {
 }
 
 // Hook into the 'after_setup_theme' action
-add_action( 'after_setup_theme', 'anompress_theme_features' );
+add_action( 'after_setup_theme', 'bootpress_theme_features' );
 
 }
 
@@ -50,18 +50,18 @@ add_action( 'after_setup_theme', 'anompress_theme_features' );
 require_once('includes/wp_bootstrap_navwalker.php');
 
 
-function custom_anompress_loader() {
+function custom_bootpress_loader() {
 wp_enqueue_style( 'bootstrap-style', get_template_directory_uri().'/assets/css/bootstrap.min.css', false , '3.3.4', 'all' );
 wp_enqueue_style( 'font-awesome-style', get_template_directory_uri().'/assets/css/font-awesome.css', false , '4.3.0', 'all' );
-wp_enqueue_style( 'anompress-style', get_template_directory_uri().'/assets/css/style.css', false , '1.0', 'all' );
+wp_enqueue_style( 'bootpress-style', get_template_directory_uri().'/assets/css/style.css', false , '1.0', 'all' );
 wp_enqueue_script( 'bootstrap-script', get_template_directory_uri() .'/assets/js/bootstrap.min.js', array( 'jquery' ), '3.3.4', true );
-wp_enqueue_script( 'anompress-script', get_template_directory_uri() .'/assets/js/script.js', array( 'jquery' ), '1.0', true );
+wp_enqueue_script( 'bootpress-script', get_template_directory_uri() .'/assets/js/script.js', array( 'jquery' ), '1.0', true );
 }
-add_action( 'wp_enqueue_scripts', 'custom_anompress_loader' );
+add_action( 'wp_enqueue_scripts', 'custom_bootpress_loader' );
 
 // Bredcrumbs
 
-function anompress_breadcrumbs() {
+function bootpress_breadcrumbs() {
 
   $delimiter = '<span class="divider">/</span>';
   $home = 'Home'; // text for the 'Home' link
@@ -162,9 +162,9 @@ function anompress_breadcrumbs() {
 } 
 
 
-function anompress_widgets_init() {
+function bootpress_widgets_init() {
   register_sidebar( array(
-    'name' => __('Page Sidebar', 'anompress'),
+    'name' => __('Page Sidebar', 'bootpress'),
     'id' => 'sidebar-page',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => "</div>",
@@ -173,7 +173,7 @@ function anompress_widgets_init() {
   ) );
 
   register_sidebar( array(
-    'name' => __('Posts Sidebar', 'anompress'),
+    'name' => __('Posts Sidebar', 'bootpress'),
     'id' => 'sidebar-posts',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => "</div>",
@@ -182,11 +182,11 @@ function anompress_widgets_init() {
   ) );
 }
 
-add_action( 'init', 'anompress_widgets_init' );
+add_action( 'init', 'bootpress_widgets_init' );
 
-if ( ! function_exists( 'anompress_posted_on' ) ) :
+if ( ! function_exists( 'bootpress_posted_on' ) ) :
   
-  function anompress_posted_on() {
+  function bootpress_posted_on() {
     printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'bootstrap' ),
       esc_url( get_permalink() ),
       esc_attr( get_the_time() ),

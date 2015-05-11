@@ -5,7 +5,7 @@
  *
  * @package WordPress
  * @subpackage Anompress
- * @since Anompress 0.1
+ * @since Bootpress 0.1
  *
  * Last Revised: May 08, 2015
  */

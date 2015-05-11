@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage Anompress
- * @since Anompress 0.1
+ * @since Bootpress 0.1
  *
  * Last Revised: May 08, 2015
  */
@@ -12,7 +12,7 @@ global $childDir;
 $childDir = dirname(get_bloginfo('stylesheet_url'));
 ?><!DOCTYPE html>
 <!-- Monstrosity -->
-<!-- http://www.anomalous.co.za/anompress -->
+<!-- http://www.anomalous.co.za/bootpress -->
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>"/>

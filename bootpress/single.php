@@ -1,24 +1,21 @@
 <?php
-
 /**
+ * Default Post Template
  *
- * Description: Default Index template to display loop of blog posts
- *
-  * @package WordPress
+ * @package WordPress
  * @subpackage Anompress
- * @since Anompress 0.1
+ * @since Bootpress 0.1
  *
  * Last Revised: May 08, 2015
  */
-
 get_header(); ?>
-		<?php while ( have_posts() ) : the_post(); ?>
+<?php while ( have_posts() ) : the_post(); ?>
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <?php if(function_exists('anompress_breadcrumbs')) anompress_breadcrumbs(); ?>
+                    <?php if(function_exists('bootpress_breadcrumbs')) bootpress_breadcrumbs(); ?>
                     <h1><?php the_title();?></h1>
-                    <p class="meta"><?php echo anompress_posted_on();?></p>
+                    <p class="meta"><?php echo bootpress_posted_on();?></p>
                     <?php the_content();?>
                     <?php the_tags( '<p>Tags: ', ', ', '</p>'); ?>
                     <?php endwhile; // end of the loop. ?>
