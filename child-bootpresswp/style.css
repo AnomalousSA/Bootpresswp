@@ -1,15 +1,15 @@
 /*
-Theme Name: Bootpress Child Bootstrap Theme
+Theme Name: Bootpresswp Child Bootstrap Theme
 Theme URI: http://anomalous.co.za/bootpress/
 Description: This is the child theme for the Anompress Bootstrap Theme.
 Author: Donovan Maidens
 Author URI: http://www.anomalous.co.za/
 Version: 1.0
 Tags: Bootstrap, responsive
-Template: bootpress
+Template: bootpresswp
 License: GNU General Public License, version 2 (GPL).
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 
 
-@import url("../bootpress/style.css");
+@import url("../bootpresswp/style.css");
