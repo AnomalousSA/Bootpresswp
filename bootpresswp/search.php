@@ -3,20 +3,21 @@
  * Description: Default Archive Page
  *
  * @package WordPress
- * @subpackage Anompress
- * @since Bootpress 0.1
+ * @subpackage Bootpresswp
+ * @since Bootpresswp 0.1
  *
- * Last Revised: May 08, 2015
+ * Last Revised: May 14, 2015
  */
+global $childDir;
 get_header(); ?>
 <?php if (have_posts() ) : ; ?>
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <h1><?php printf( __( 'Search Results for: %s', 'bootpress' ), '<small>' . get_search_query() . '</small>' ); ?></h1>
+                    <h1><?php printf( __( 'Search Results for: %s', 'bootpresswp' ), '<small>' . get_search_query() . '</small>' ); ?></h1>
                     <?php while ( have_posts() ) : the_post(); ?>
-                            <a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h3><?php the_title();?></h3></a>
-                            <?php the_excerpt();?>
+                    <a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h3><?php the_title();?></h3></a>
+                    <?php the_excerpt();?>
                     <?php endwhile; ?>
                 </div>
                 <div class="col-md-4"><?php get_sidebar(); ?></div>
@@ -27,9 +28,9 @@ get_header(); ?>
             <div class="row">
                 <div class="col-md-8">
                     <div class="jumbotron">
-                      <h1><?php _e( 'No Results Found', 'bootpress' ); ?></h1>
-                      <p><?php _e( 'Perhaps you should try again with a different search term.', 'bootpress' ); ?></p>
-                      <p><a class="btn btn-primary btn-lg" role="button" href="<?php echo home_url( '/' ); ?>">Return to Home</a></p>
+                        <h1><?php _e( 'No Results Found', 'bootpresswp' ); ?></h1>
+                        <p><?php _e( 'Perhaps you should try again with a different search term.', 'bootpresswp' ); ?></p>
+                        <p><a class="btn btn-primary btn-lg" role="button" href="<?php echo home_url( '/' ); ?>">Return to Home</a></p>
                     </div>
                     <?php get_search_form(); ?>
                 </div>

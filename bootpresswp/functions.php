@@ -2,66 +2,93 @@
 /**
  *
  * @package WordPress
- * @subpackage Anompress
- * @since Bootpress 0.1
+ * @subpackage Bootpresswp
+ * @since Bootpresswp 0.1
  *
- * Last Revised: May 08, 2015
+ * Last Revised: May 14, 2015
  */
-if ( ! function_exists('bootpress_theme_features') ) {
+
+
+// Set content width value based on the theme's design
+if ( ! isset( $content_width ) )
+	$content_width = 900;
+
+if ( ! function_exists('bootstrapwp_theme_features') ) {
 
 // Register Theme Features
-function bootpress_theme_features()  {
+function bootstrapwp_theme_features()  {
 
 	// Add theme support for Automatic Feed Links
 	add_theme_support( 'automatic-feed-links' );
 
 	// Add theme support for Post Formats
-	$formats = array( 'status', 'quote', 'gallery', 'image', 'video', 'audio', 'link', 'aside', 'chat', );
-	add_theme_support( 'post-formats', $formats );	
+	add_theme_support( 'post-formats', array( 'status', 'quote', 'gallery', 'image', 'video', 'audio', 'link', 'aside', 'chat' ) );
 
 	// Add theme support for Featured Images
-	add_theme_support( 'post-thumbnails' );	
+	add_theme_support( 'post-thumbnails' );
 
 	// Add theme support for Custom Background
 	$background_args = array(
-		'default-color'          => '#ffffff',
+		'default-color'          => 'ffffff',
 		'default-image'          => '',
-		'wp-head-callback'       => '_custom_background_cb',
+		'default-repeat'         => '',
+		'default-position-x'     => '',
+		'wp-head-callback'       => '',
 		'admin-head-callback'    => '',
 		'admin-preview-callback' => '',
 	);
-	add_theme_support( 'custom-background', $background_args );
+	//add_theme_support( 'custom-background', $background_args );
 
-	register_nav_menus( array(
-        'main-menu' => __( 'Main Menu', 'Monstrosity' ),
-      ) );
+	// Add theme support for Custom Header
+	$header_args = array(
+		'default-image'          => '',
+		'width'                  => 0,
+		'height'                 => 0,
+		'flex-width'             => false,
+		'flex-height'            => false,
+		'uploads'                => true,
+		'random-default'         => false,
+		'header-text'            => false,
+		'default-text-color'     => '',
+		'wp-head-callback'       => '',
+		'admin-head-callback'    => '',
+		'admin-preview-callback' => '',
+	);
+	//add_theme_support( 'custom-header', $header_args );
 
-	// Add theme support for Semantic Markup
-	$markup = array( 'search-form', 'comment-form', 'comment-list', );
-	add_theme_support( 'html5', $markup );	
+	// Add theme support for HTML5 Semantic Markup
+	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
+
+	// Add theme support for document Title tag
+	add_theme_support( 'title-tag' );
+        
+        // Add theme support for custom CSS in the TinyMCE visual editor
+	add_editor_style();
 }
 
 // Hook into the 'after_setup_theme' action
-add_action( 'after_setup_theme', 'bootpress_theme_features' );
+add_action( 'after_setup_theme', 'bootstrapwp_theme_features' );
 
 }
+
+
 
 // New Nav walker for Bootstrap
 require_once('includes/wp_bootstrap_navwalker.php');
 
 
-function custom_bootpress_loader() {
+function custom_bootpresswp_loader() {
 wp_enqueue_style( 'bootstrap-style', get_template_directory_uri().'/assets/css/bootstrap.min.css', false , '3.3.4', 'all' );
 wp_enqueue_style( 'font-awesome-style', get_template_directory_uri().'/assets/css/font-awesome.css', false , '4.3.0', 'all' );
-wp_enqueue_style( 'bootpress-style', get_template_directory_uri().'/assets/css/style.css', false , '1.0', 'all' );
+wp_enqueue_style( 'bootpresswp-style', get_template_directory_uri().'/assets/css/style.css', false , '1.0', 'all' );
 wp_enqueue_script( 'bootstrap-script', get_template_directory_uri() .'/assets/js/bootstrap.min.js', array( 'jquery' ), '3.3.4', true );
-wp_enqueue_script( 'bootpress-script', get_template_directory_uri() .'/assets/js/script.js', array( 'jquery' ), '1.0', true );
+wp_enqueue_script( 'bootpresswp-script', get_template_directory_uri() .'/assets/js/script.js', array( 'jquery' ), '1.0', true );
 }
-add_action( 'wp_enqueue_scripts', 'custom_bootpress_loader' );
+add_action( 'wp_enqueue_scripts', 'custom_bootpresswp_loader' );
 
 // Bredcrumbs
 
-function bootpress_breadcrumbs() {
+function bootpresswp_breadcrumbs() {
 
   $delimiter = '<span class="divider">/</span>';
   $home = 'Home'; // text for the 'Home' link
@@ -162,31 +189,62 @@ function bootpress_breadcrumbs() {
 } 
 
 
-function bootpress_widgets_init() {
-  register_sidebar( array(
-    'name' => __('Page Sidebar', 'bootpress'),
+function bootpresswp_widgets_init() {
+  $page = array(
+    'name' => __('Page Sidebar', 'bootpresswp'),
     'id' => 'sidebar-page',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => "</div>",
     'before_title' => '<h4 class="widget-title">',
     'after_title' => '</h4>',
-  ) );
+  );
+  register_sidebar( $page );
 
-  register_sidebar( array(
-    'name' => __('Posts Sidebar', 'bootpress'),
+  $posts = array(
+    'name' => __('Posts Sidebar', 'bootpresswp'),
     'id' => 'sidebar-posts',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => "</div>",
     'before_title' => '<h4 class="widget-title">',
     'after_title' => '</h4>',
-  ) );
+  );
+  register_sidebar( $posts );
 }
 
-add_action( 'init', 'bootpress_widgets_init' );
+add_action( 'widgets_init', 'bootpresswp_widgets_init' );
 
-if ( ! function_exists( 'bootpress_posted_on' ) ) :
+if ( ! function_exists( 'bootpresswp_content_nav' ) ):
+/**
+ * Display navigation to next/previous pages when applicable
+ */
+function bootpresswp_content_nav( $nav_id ) {
+	global $wp_query;
+	?>
+
+	<?php if ( is_single() ) : // navigation links for single posts ?>
+<ul class="pager">
+		<?php previous_post_link( '<li class="previous">%link</li>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'purecsspress' ) . '</span> %title' ); ?>
+		<?php next_post_link( '<li class="next">%link</li>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'purecsspress' ) . '</span>' ); ?>
+</ul>
+	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
+<ul class="pager">
+		<?php if ( get_next_posts_link() ) : ?>
+		<li class="next"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'purecsspress' ) ); ?></li>
+		<?php endif; ?>
+
+		<?php if ( get_previous_posts_link() ) : ?>
+		<li class="previous"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'purecsspress' ) ); ?></li>
+		<?php endif; ?>
+</ul>
+	<?php endif; ?>
+
+	<?php
+}
+endif; // bootstrapwp_content_nav
+
+if ( ! function_exists( 'bootpresswp_posted_on' ) ) :
   
-  function bootpress_posted_on() {
+  function bootpresswp_posted_on() {
     printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'bootstrap' ),
       esc_url( get_permalink() ),
       esc_attr( get_the_time() ),
@@ -198,4 +256,10 @@ if ( ! function_exists( 'bootpress_posted_on' ) ) :
     );
   }
 endif;
+
+function theme_queue_js(){
+if ( (!is_admin()) && is_singular() && comments_open() && get_option('thread_comments') )
+  wp_enqueue_script( 'comment-reply' );
+}
+add_action('wp_print_scripts', 'theme_queue_js');
  ?>
