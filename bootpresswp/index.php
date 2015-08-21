@@ -7,7 +7,7 @@
  * @subpackage Bootpresswp
  * @since Bootpresswp 0.1
  *
- * Last Revised: May 14, 2015
+ * Last Revised: Aug 21, 2015
  */
 global $childDir;
 get_header(); ?>
@@ -20,10 +20,10 @@ get_header(); ?>
                     <p class="meta"><?php echo bootpresswp_posted_on();?></p>
                     <?php the_content();?>
                     <?php the_tags( '<p>Tags: ', ', ', '</p>'); ?>
-                    <?php endwhile; // end of the loop. ?>
+                    <?php endwhile;?>
                     <?php comments_template(); ?>
                 </div>              
                 <div class="col-md-4"><?php get_sidebar(); ?></div>
             </div>         
-        </div> <!-- /container -->
+        </div>
 <?php get_footer(); ?>

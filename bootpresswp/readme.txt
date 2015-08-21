@@ -1,12 +1,12 @@
 Bootpresswp Press Theme
-This readme.txt is last updated on: 15 May 2015
+This readme.txt is last updated on: 21 Aug 2015
 
 
 == BRIEF INFORMATION ==
 
 Theme URI: 	http://www.anomalous.co.za/bootpresswp
 Author: 	Donovan Maidens
-Author URI: http://www.anomalous.co.za/
+Author URI:     http://www.anomalous.co.za/
 Tags: 		one-column, two-columns, right-sidebar, custom-menu, editor-style, featured-images, post-formats
 License: 	GNU General Public License, version 2 (GPL).
 
@@ -23,13 +23,13 @@ Manual installation:
 
 Installation using "Add New Theme"
 1. From your Admin UI (Dashboard), use the menu to select Themes -> Add New
-2. Search for 'purecsspress'
+2. Search for 'bootpresswp child theme'
 3. Click the 'Install' button to open the theme's repository listing
 4. Click the 'Install' button
 
 Activation and Use
 1. Activate the Theme through the 'Themes' menu in WordPress
-2. See Appearance -> Purecss Press Options for Theme Options
+2. See Appearance -> Bootpresswp Press Options for Theme Options
 
 
 == DOCUMENTATION ==
