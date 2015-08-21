@@ -6,7 +6,7 @@
  * @subpackage Bootpresswp
  * @since Bootpresswp 0.1
  *
- * Last Revised: May 14, 2015
+ * Last Revised: Aug 21, 2015
  */
 get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
@@ -25,11 +25,11 @@ get_header(); ?>
 	'link_after'  => '</span>',
 	) );
 ?>
-                    <?php endwhile; // end of the loop. ?>
+                    <?php endwhile; ?>
                     <?php comments_template(); ?>
                     <?php bootpresswp_content_nav('nav-below');?>
                 </div>              
                 <div class="col-md-4"><?php get_sidebar(); ?></div>
             </div>         
-        </div> <!-- /container -->
+        </div>
 <?php get_footer(); ?>

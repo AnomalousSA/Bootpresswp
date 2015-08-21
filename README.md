@@ -3,20 +3,23 @@ Bootpresswp
 
 ## Bootpress WordPress starter theme
 
-Version: 1
+Version: 1.3
 
 ## How to Install
 
 Manual installation:
+
 1. Upload the `bootpresswp` and `child-bootpresswp` folder to the `/wp-content/themes/` directory
 
 Installation using "Add New Theme"
+
 1. From your Admin UI (Dashboard), use the menu to select Themes -> Add New
 2. Search for 'bootpresswp child theme'
 3. Click the 'Install' button to open the theme's repository listing
 4. Click the 'Install' button
 
 Activation and Use
+
 1. Activate the Theme through the 'Themes' menu in WordPress
 2. See Appearance -> Bootpresswp Press Options for Theme Options
 
@@ -32,11 +35,12 @@ It has no pretty templates.
 
 ## Also Look at
 
+Bootstrap Nav Walker [wp-bootstrap-navwalker](https://github.com/twittem/wp-bootstrap-navwalker)
 
 
 
 ## Acknowledgement
 
-
+Bootstrap Nav Walker [wp-bootstrap-navwalker](https://github.com/twittem/wp-bootstrap-navwalker)
 
 
