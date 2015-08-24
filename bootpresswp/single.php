@@ -19,7 +19,7 @@ get_header(); ?>
                     <?php the_content();?>
                     <?php the_tags( '<p>Tags: ', ', ', '</p>'); ?>
                     <?php wp_link_pages( array(
-	'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentyfourteen' ) . '</span>',
+	'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'bootpresswp' ) . '</span>',
 	'after'       => '</div>',
 	'link_before' => '<span>',
 	'link_after'  => '</span>',

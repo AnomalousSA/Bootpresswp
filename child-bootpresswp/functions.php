@@ -2,10 +2,10 @@
 /**
  *
  * @package WordPress
- * @subpackage Anompress Child Theme
+ * @subpackage Bootpresswp
  * @since Bootpresswp 0.1
  *
- * Last Updated: March 11, 2014
+ * Last Updated: Aug 24, 2015
  */
 
 function remove_scripts()

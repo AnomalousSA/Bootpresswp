@@ -1,7 +1,10 @@
 Bootpresswp
 =================
 
-## Bootpress WordPress starter theme
+## Bootstrap WordPress starter theme
+
+This is a base theme used to create custom WordPress themes. It should be used as a start for your own Custom Bootstrap theme.
+Best practice is to do all custom development in a Child Theme. The child theme has been included.
 
 Version: 1.3
 
@@ -14,9 +17,10 @@ Manual installation:
 Installation using "Add New Theme"
 
 1. From your Admin UI (Dashboard), use the menu to select Themes -> Add New
-2. Search for 'bootpresswp child theme'
-3. Click the 'Install' button to open the theme's repository listing
-4. Click the 'Install' button
+2. Search for 'bootpresswp'
+3. Install and Activate Theme
+4. Search for 'bootpresswp child theme'
+5. Install and Activate child theme
 
 Activation and Use
 
