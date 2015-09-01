@@ -75,7 +75,8 @@ add_action( 'after_setup_theme', 'bootstrapwp_theme_features' );
 
 // New Nav walker for Bootstrap
 require_once('includes/wp_bootstrap_navwalker.php');
-
+// Bootstrap pagination
+require_once('includes/wp_bootstrap_pagination.php');
 
 function custom_bootpresswp_loader() {
 wp_enqueue_style( 'bootstrap-style', get_template_directory_uri().'/assets/css/bootstrap.min.css', false , '3.3.4', 'all' );

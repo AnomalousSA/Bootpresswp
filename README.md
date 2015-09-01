@@ -40,13 +40,13 @@ It has no pretty templates.
 ## Also Look at
 
 Bootstrap Nav Walker [wp-bootstrap-navwalker](https://github.com/twittem/wp-bootstrap-navwalker)
-
+Bootstrap Pagination [wp-bootstrap-pagination](https://github.com/talentedaamer/Bootstrap-wordpress-pagination)
 
 
 ## Acknowledgement
 
 Bootstrap Nav Walker [wp-bootstrap-navwalker](https://github.com/twittem/wp-bootstrap-navwalker)
-
+Bootstrap Pagination [wp-bootstrap-pagination](https://github.com/talentedaamer/Bootstrap-wordpress-pagination)
 
 
 
