@@ -27,6 +27,16 @@ Activation and Use
 1. Activate the Theme through the 'Themes' menu in WordPress
 2. See Appearance -> Bootpresswp Press Options for Theme Options
 
+## Special Functions
+
+To include pagination in your theme templates.
+
+<?php
+  if ( function_exists('wp_bootstrap_pagination') )
+    wp_bootstrap_pagination();
+?>
+
+
 ## Author:
 
 Donovan Maidens ( [@Anomalous_Bot](http://twitter.com/Anomalous_Bot) / [anomalous.co.za](http://anomalous.co.za) )

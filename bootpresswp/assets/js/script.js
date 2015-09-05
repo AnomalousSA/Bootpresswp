@@ -1,7 +1,7 @@
-// Monstrosity
+// Bootpresswp
 // Theme Designed and Scripted by Anomalous 
 // http://www.anomalous.co.za
-// 29 July 2013
+// 05 September 2015
 
 jQuery(document).ready(function() {
 	
