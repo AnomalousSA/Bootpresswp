@@ -36,6 +36,33 @@ To include pagination in your theme templates.
     wp_bootstrap_pagination();
 ?>
 
+To Include breadcrumbs, there are two different codes bases available.
+<?php 
+    if(function_exists('bootpresswp_breadcrumbs')) 
+    bootpresswp_breadcrumbs(); 
+?>
+<?php
+  if ( function_exists('custom_breadcrumbs') )
+    custom_breadcrumbs();
+?>
+
+To use the menu in your theme here is the changes to the standard WordPress nav walker
+
+<?php
+        wp_nav_menu( array(
+            'menu'              => 'main-menu',
+            'theme_location'    => 'main-menu',
+            'depth'             => 2,
+            'container'         => 'div',
+            'container_class'   => 'collapse navbar-collapse',
+            'container_id'      => 'bs-example-navbar-collapse-1',
+            'menu_class'        => 'nav navbar-nav',
+            'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+            'walker'            => new wp_bootstrap_navwalker())
+        );
+    ?>    
+
+You can see an example in the header.php file on using it in a fully functional navbar
 
 ## Author:
 
@@ -59,6 +86,4 @@ Bootstrap Nav Walker [wp-bootstrap-navwalker](https://github.com/twittem/wp-boot
 Bootstrap Pagination [wp-bootstrap-pagination](https://github.com/talentedaamer/Bootstrap-wordpress-pagination)
 
 
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/AnomalousSA/bootpresswp/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
