@@ -31,12 +31,14 @@ Activation and Use
 
 To include pagination in your theme templates.
 
+```php
 <?php
   if ( function_exists('wp_bootstrap_pagination') )
     wp_bootstrap_pagination();
 ?>
-
+```
 To Include breadcrumbs, there are two different codes bases available.
+```php
 <?php 
     if(function_exists('bootpresswp_breadcrumbs')) 
     bootpresswp_breadcrumbs(); 
@@ -45,9 +47,9 @@ To Include breadcrumbs, there are two different codes bases available.
   if ( function_exists('custom_breadcrumbs') )
     custom_breadcrumbs();
 ?>
-
+```
 To use the menu in your theme here is the changes to the standard WordPress nav walker
-
+```php
 <?php
         wp_nav_menu( array(
             'menu'              => 'main-menu',
@@ -61,7 +63,7 @@ To use the menu in your theme here is the changes to the standard WordPress nav 
             'walker'            => new wp_bootstrap_navwalker())
         );
     ?>    
-
+```
 You can see an example in the header.php file on using it in a fully functional navbar
 
 ## Author:
