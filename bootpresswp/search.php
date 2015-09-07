@@ -6,7 +6,7 @@
  * @subpackage Bootpresswp
  * @since Bootpresswp 0.1
  *
- * Last Revised: Aug 21, 2015
+ * Last Revised: Sep 07, 2015
  */
 global $childDir;
 get_header(); ?>
@@ -20,7 +20,7 @@ get_header(); ?>
                     <?php the_excerpt();?>
                     <?php endwhile; ?>
                 </div>
-                <div class="col-md-4"><?php get_sidebar(); ?></div>
+                <div class="col-md-4"><?php get_sidebar('post'); ?></div>
             </div>         
         </div>
 <?php else: ?>
@@ -34,7 +34,7 @@ get_header(); ?>
                     </div>
                     <?php get_search_form(); ?>
                 </div>
-                <div class="col-md-4"><?php get_sidebar(); ?></div>
+                <div class="col-md-4"><?php get_sidebar('post'); ?></div>
             </div>         
         </div>
 <?php endif ;?>
