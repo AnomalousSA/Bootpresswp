@@ -6,6 +6,8 @@ Bootpresswp
 This is a base theme used to create custom WordPress themes. It should be used as a start for your own Custom Bootstrap theme.
 Best practice is to do all custom development in a Child Theme. The child theme has been included.
 
+View Example Site [bootpresswp.anomalous.co.za](http://bootpresswp.anomalous.co.za)
+
 Version: 1.3
 
 ## How to Install

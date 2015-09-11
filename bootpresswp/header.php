@@ -46,7 +46,7 @@ $childDir = dirname(get_bloginfo('stylesheet_url'));
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<?php echo home_url( '/' ); ?>">Project name</a>
+                <a class="navbar-brand" href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a>
             </div>
             <?php
                 wp_nav_menu( array(
