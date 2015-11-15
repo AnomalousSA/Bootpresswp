@@ -45,10 +45,6 @@ To Include breadcrumbs, there are two different codes bases available.
     if(function_exists('bootpresswp_breadcrumbs')) 
     bootpresswp_breadcrumbs(); 
 ?>
-<?php
-  if ( function_exists('custom_breadcrumbs') )
-    custom_breadcrumbs();
-?>
 ```
 To use the menu in your theme here is the changes to the standard WordPress nav walker
 ```php

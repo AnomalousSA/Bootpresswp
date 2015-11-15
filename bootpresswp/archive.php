@@ -22,6 +22,8 @@ get_header(); ?>
                         printf( __( 'Monthly Archives: %s', 'bootpresswp' ), '<small>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'bootpresswp' ) ) . '</small>' );
                     } elseif ( is_year() ) {
                         printf( __( 'Yearly Archives: %s', 'bootpresswp' ), '<small>' . get_the_date( _x( 'Y', 'yearly archives date format', 'bootpresswp' ) ) . '</span>' );
+                    } elseif ( is_author() ) {
+                        printf( __( 'Author Archives: %s', 'bootpresswp' ), '<small>' . get_the_author() . '</small>' );
                     } elseif ( is_tag() ) {
                         printf( __( 'Tag Archives: %s', 'bootpresswp' ), '<small>' . single_tag_title( '', false ) . '</small>' );
                                 // Show an optional tag description
