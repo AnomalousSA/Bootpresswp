@@ -6,12 +6,12 @@
  * @subpackage Bootpresswp
  * @since Bootpresswp 0.1
  *
- * Last Revised: May 14, 2015
+ * Last Revised: Nov 21, 2015
  */
 get_header(); ?>
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-sm-8">
                     <?php if(function_exists('bootpresswp_breadcrumbs')) bootpresswp_breadcrumbs(); ?>
                     <div class="jumbotron">
                       <h1><?php _e( 'This is 404 page', 'bootpresswp' ); ?></h1>
@@ -31,7 +31,7 @@ get_header(); ?>
                         </div>
                     </div>
                 </div>              
-                <div class="col-md-4"><?php get_sidebar(); ?></div>
+                <div class="col-sm-4"><?php get_sidebar(); ?></div>
             </div>         
         </div> <!-- /container -->
 <?php get_footer(); ?>

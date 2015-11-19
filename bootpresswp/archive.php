@@ -13,7 +13,7 @@ get_header(); ?>
 <?php if (have_posts() ) ; ?>
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-sm-8">
                     <?php if(function_exists('bootpresswp_breadcrumbs')) bootpresswp_breadcrumbs(); ?>
                     <h1><?php
                     if ( is_day() ) {
@@ -26,7 +26,7 @@ get_header(); ?>
                         printf( __( 'Author Archives: %s', 'bootpresswp' ), '<small>' . get_the_author() . '</small>' );
                     } elseif ( is_tag() ) {
                         printf( __( 'Tag Archives: %s', 'bootpresswp' ), '<small>' . single_tag_title( '', false ) . '</small>' );
-                                // Show an optional tag description
+                        // Show an optional tag description
                         $tag_description = tag_description();
                         if ( $tag_description )
                             echo apply_filters( 'tag_archive_meta', '<div class="tag-archive-meta">' . $tag_description . '</div>' );
@@ -46,7 +46,7 @@ get_header(); ?>
                         </div>
                     <?php endwhile; ?>
                 </div>
-                <div class="col-md-4"><?php get_sidebar('post'); ?></div>
+                <div class="col-sm-4"><?php get_sidebar('post'); ?></div>
             </div>         
         </div>
 <?php get_footer(); ?>

@@ -14,7 +14,7 @@ global $childDir;
         <footer class="container">
             <div class="row">
                 <hr>
-                <div class="col-md-12"><p><small>&copy; Anomalous, Bootpresswp</small></p></div>
+                <div class="col-sm-12"><p><small>&copy; Anomalous, Bootpresswp</small></p></div>
             </div>
         </footer>
         <?php wp_footer(); ?>
