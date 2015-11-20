@@ -1,6 +1,6 @@
 <?php
 /**
- * Default Page Header
+ * Comment Template
  *
  * @package WordPress
  * @subpackage Bootpresswp

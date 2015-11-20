@@ -41,7 +41,7 @@ $childDir = dirname(get_bloginfo('stylesheet_url'));
             </div>
             <?php
                 wp_nav_menu( array(
-                    'menu'              => 'main-menu',
+                    //'menu'              => 'main-menu',
                     'theme_location'    => 'main-menu',
                     'depth'             => 2,
                     'container'         => 'div',

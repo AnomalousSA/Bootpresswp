@@ -20,9 +20,9 @@ get_header(); ?>
                     </div>
                     <div class="well">
                         <div class="row">
-                            <div class="col-md-4"><?php get_search_form(); ?></div>
-                            <div class="col-md-4"><?php the_widget( 'WP_Widget_Recent_Posts' ); ?></div>
-                            <div class="col-md-4">
+                            <div class="col-sm-4"><?php get_search_form(); ?></div>
+                            <div class="col-sm-4"><?php the_widget( 'WP_Widget_Recent_Posts' ); ?></div>
+                            <div class="col-sm-4">
                                 <h2><?php _e( 'Categories', 'bootpresswp' ); ?></h2>
                                 <ul>
                                     <?php wp_list_categories( array( 'orderby' => 'count', 'order' => 'DESC', 'show_count' => 1, 'title_li' => '', 'number' => 10 ) ); ?>
