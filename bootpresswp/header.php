@@ -6,7 +6,7 @@
  * @subpackage Bootpresswp
  * @since Bootpresswp 0.1
  *
- * Last Revised: Nov 21, 2015
+ * Last Revised: Mar 10, 2016
  */
 global $childDir;
 $childDir = dirname(get_bloginfo('stylesheet_url'));
@@ -18,9 +18,6 @@ $childDir = dirname(get_bloginfo('stylesheet_url'));
     <meta charset="<?php bloginfo('charset'); ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title><?php wp_title('|', true, 'right'); ?></title>
-    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>"/>
-    <link rel="shortcut icon" href="<?php print $childDir; ?>/assets/ico/favicon.ico">
     <?php wp_head(); ?>
     <!--[if lt IE 9]>
         <script src="<?php print $childDir; ?>/assets/js/vendor/html5shiv.min.js"></script>
