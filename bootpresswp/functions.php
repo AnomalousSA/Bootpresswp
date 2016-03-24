@@ -79,6 +79,8 @@ require_once('includes/wp_bootstrap_navwalker.php');
 require_once('includes/wp_bootstrap_pagination.php');
 // Bootstrap breadcrumbs
 require_once('includes/wp_bootstrap_breadcrumbs.php');
+// Add Shortcodes
+require_once('includes/wp_bootstrap_shortcodes.php');
 
 
 function custom_bootpresswp_loader() {
@@ -283,4 +285,10 @@ if ( (!is_admin()) && is_singular() && comments_open() && get_option('thread_com
   wp_enqueue_script( 'comment-reply' );
 }
 add_action('wp_print_scripts', 'theme_queue_js');
+
+// Added Woocommerce Support to theme
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
  ?>
