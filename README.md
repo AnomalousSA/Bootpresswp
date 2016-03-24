@@ -67,27 +67,41 @@ You can see an example in the header.php file on using it in a fully functional 
 ## Short Codes:
 
 **Row and Columns**
+
 Add a row
+
 [row]content[/row]
 
 Add a Column
+
 This uses the standard 1 to 12 for bootstrap columns
+
 [col xsmall="" small="" medium="" large="" class=""]Here is the content[/col]
 
 Example:
+
 2 Columns taking up 50% on medium screens
+
 [row][col xsmall="" small="" medium="6" large="" class="own-class"]Left Column[/col][col xsmall="" small="" medium="6" large="" class="own-class"]Right Column[/col][/row]
 
+
 **Button**
+
 [btn href="test" type="btn-danger" size="btn-large" disabled="disabled"]Here is the content[/btn]
 
+
 **Label**
+
 [label type=""]here is content[/label]
 
+
 **Badge**
+
 [badge type=""]here is content[/badge]
 
+
 **Headline**
+
 [head headline="" subtext=""]
 
 There are a few more for carousel and modals but these are still in production.
