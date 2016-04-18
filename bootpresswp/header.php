@@ -6,13 +6,13 @@
  * @subpackage Bootpresswp
  * @since Bootpresswp 0.1
  *
- * Last Revised: Mar 10, 2016
+ * Last Revised: Apr 18, 2016
  */
 global $childDir;
 $childDir = dirname(get_bloginfo('stylesheet_url'));
 ?><!DOCTYPE html>
 <!-- Bootpresswp -->
-<!-- http://www.anomalous.co.za/bootpresswp -->
+<!-- http://bootpresswp.anomalous.co.za -->
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>"/>

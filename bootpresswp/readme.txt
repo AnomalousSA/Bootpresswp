@@ -1,10 +1,10 @@
 Bootpresswp Press Theme
-This readme.txt is last updated on: 21 Aug 2015
+This readme.txt is last updated on: 18 Aug 2016
 
 
 == BRIEF INFORMATION ==
 
-Theme URI: 	http://www.anomalous.co.za/bootpresswp
+Theme URI: 	http://bootpresswp.anomalous.co.za
 Author: 	Donovan Maidens
 Author URI:     http://www.anomalous.co.za/
 Tags: 		one-column, two-columns, right-sidebar, custom-menu, editor-style, featured-images, post-formats
