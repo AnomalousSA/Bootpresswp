@@ -1,7 +1,7 @@
 Bootpresswp
 =================
 
-## Bootstrap WordPress starter theme
+## Bootstrap WordPress starter theme 
 
 This is a base theme used to create custom WordPress themes. It should be used as a start for your own Custom Bootstrap theme.
 Best practice is to do all custom development in a Child Theme. The child theme has been included.
