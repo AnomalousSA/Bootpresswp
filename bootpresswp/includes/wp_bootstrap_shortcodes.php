@@ -6,10 +6,18 @@
 
 // Carosel Shortcode 
 // [carosel][/carosel]
-function carosel_shortcode($atts, $content = null) {
-    return '<div class="row-fluid" style="position:relative"><div class="span1"><a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a></div><div class="span10"><div id="myCarousel" class="carousel slide"><ol class="carousel-indicators"></ol><div class="carousel-inner">' . do_shortcode($content) . '</div></div></div><div class="span1"><a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a></div></div>';
+function carosel_shortcode( $atts , $content = null ) {
+
+// Attributes
+	extract( shortcode_atts(
+		array(
+			'id' => 'myCarousel',
+		), $atts )
+	);
+
+return '<div class="row-fluid" style="position:relative"><div class="span1"><a class="carousel-control left" href="#' . $id . '" data-slide="prev"><img src="http://d-core.co.za/wp-content/themes/child-core/assets/img/dcore/backwards.png"></a></div><div class="span10"><div id="' . $id . '" class="carousel slide"><ol class="carousel-indicators"></ol><div class="carousel-inner">' . do_shortcode($content) . '</div></div></div><div class="span1"><a class="carousel-control right" href="#' . $id . '" data-slide="next"><img src="http://d-core.co.za/wp-content/themes/child-core/assets/img/dcore/forward.png"></a></div></div>';
 }
-add_shortcode('carosel', 'carosel_shortcode');
+add_shortcode( 'carosel', 'carosel_shortcode' );
 
 
 // Carosel Image
