@@ -7,7 +7,7 @@
  * @subpackage Bootpresswp
  * @since Bootpresswp 0.1
  *
- * Last Revised: Sep 07, 2015
+ * Last Revised: Jul 15, 2016
  */
 global $childDir;
 ?>
@@ -18,7 +18,6 @@ global $childDir;
                 <div class="col-sm-6">
                     <?php
                     wp_nav_menu( array(
-                        //'menu'              => 'main-menu',
                         'theme_location'    => 'footer-menu',
                         'depth'             => 1,
                         'container'         => 'div',

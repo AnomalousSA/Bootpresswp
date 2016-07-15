@@ -6,7 +6,7 @@
  * @subpackage Bootpresswp
  * @since Bootpresswp 0.1
  *
- * Last Revised: Sep 07, 2015
+ * Last Revised: Jul 15, 2016
  */
 global $childDir;
 get_header(); ?>
@@ -14,7 +14,7 @@ get_header(); ?>
         <div class="container">
             <div class="row">
                 <div class="col-sm-8">
-                    <?php if(function_exists('bootpresswp_breadcrumbs')) bootpresswp_breadcrumbs(); ?>
+                    <?php if(function_exists('bootpresswp_breadcrumbs')) : bootpresswp_breadcrumbs(); endif; ?>
                     <h1><?php
                     if ( is_day() ) {
                         printf( __( 'Daily Archives: %s', 'bootpresswp' ), '<small>' . get_the_date() . '</small>' );
@@ -28,15 +28,17 @@ get_header(); ?>
                         printf( __( 'Tag Archives: %s', 'bootpresswp' ), '<small>' . single_tag_title( '', false ) . '</small>' );
                         // Show an optional tag description
                         $tag_description = tag_description();
-                        if ( $tag_description )
+                        if ( $tag_description ) {
                             echo apply_filters( 'tag_archive_meta', '<div class="tag-archive-meta">' . $tag_description . '</div>' );
+                        }
                     } elseif ( is_category() ) {
                         printf( __( 'Category Archives: %s', 'bootpresswp' ), '<small>' . single_cat_title( '', false ) . '</small>' );
                         $category_description = category_description();
-                        if ( $category_description )
+                        if ( $category_description ) {
                             echo apply_filters( 'category_archive_meta', '<div class="category-archive-meta">' . $category_description . '</div>' );
+                        }     
                     } else {
-                        _e( 'Blog Archives', 'bootpresswp' );
+                    _e( 'Blog Archives', 'bootpresswp' );
                     }
                     ?></h1>
                     <?php while ( have_posts() ) : the_post(); ?>
@@ -49,4 +51,4 @@ get_header(); ?>
                 <div class="col-sm-4"><?php get_sidebar('post'); ?></div>
             </div>         
         </div>
-<?php get_footer(); ?>
+<?php get_footer();

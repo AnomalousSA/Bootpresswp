@@ -6,13 +6,13 @@
  * @subpackage Bootpresswp
  * @since Bootpresswp 0.1
  *
- * Last Revised: Nov 21, 2015
+ * Last Revised: Jul 15, 2016
  */
 ?>
 	<div id="comments">
 	<?php if ( post_password_required() ) : ?>
             <p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'bootpresswp' ); ?></p>
-	</div><!-- #comments -->
+	</div>
 	<?php
         return;
         endif;
@@ -26,17 +26,10 @@
             </h2>
 		<ol class="commentlist">
                 <?php
-                /* 
-                 * define bootstrapwp_comment() and that will be used instead.
-                 * See bootstrapwp_comment() in bootstrapwp/functions.php for more.
-                 */
                 wp_list_comments( array( 'callback' => 'bootstrapwp_comment' ) );
                 ?>
 		</ol>
 	<?php
-		/* 
-                 * Else if no comments
-		 */
 		elseif ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
 		<p class="nocomments"><?php _e( 'Comments are closed.', 'purecsspress' ); ?></p>
@@ -45,4 +38,4 @@
             <?php paginate_comments_links(); ?>
             </div>
 	<?php comment_form(); ?>
-        </div><!-- #comments -->
+        </div>

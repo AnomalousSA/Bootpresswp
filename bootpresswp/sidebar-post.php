@@ -6,7 +6,7 @@
  * @subpackage Bootpresswp
  * @since Bootpresswp 0.1
  *
- * Last Revised: May 14, 2015
+ * Last Revised: Jul 15, 2016
  */
 ?>
-<?php if ( function_exists('dynamic_sidebar')) dynamic_sidebar("sidebar-posts"); ?>
+<?php if ( function_exists('dynamic_sidebar')) : dynamic_sidebar("sidebar-posts"); endif;

@@ -6,11 +6,11 @@
  * @subpackage Bootpresswp
  * @since Bootpresswp 0.1
  *
- * Last Revised: Sep 07, 2015
+ * Last Revised: Jul 15, 2016
  */
 global $childDir;
 get_header(); ?>
-<?php if (have_posts() ) : ; ?>
+<?php if (have_posts() ) : ?>
         <div class="container">
             <div class="row">
                 <div class="col-sm-8">

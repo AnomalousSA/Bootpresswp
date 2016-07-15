@@ -6,7 +6,7 @@
  * @subpackage Bootpresswp
  * @since Bootpresswp 0.1
  *
- * Last Revised: Apr 18, 2016
+ * Last Revised: Jul 15, 2016
  */
 global $childDir;
 $childDir = dirname(get_bloginfo('stylesheet_url'));
@@ -38,7 +38,6 @@ $childDir = dirname(get_bloginfo('stylesheet_url'));
             </div>
             <?php
                 wp_nav_menu( array(
-                    //'menu'              => 'main-menu',
                     'theme_location'    => 'main-menu',
                     'depth'             => 2,
                     'container'         => 'div',

@@ -9,4 +9,4 @@
  * Last Revised: May 14, 2015
  */
 ?>
-<?php if ( function_exists('dynamic_sidebar')) dynamic_sidebar("sidebar-page"); ?>
+<?php if ( function_exists('dynamic_sidebar')) : dynamic_sidebar("sidebar-page"); endif;
