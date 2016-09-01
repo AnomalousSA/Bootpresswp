@@ -13,7 +13,7 @@ $childDir = dirname(get_bloginfo('stylesheet_url'));
 ?><!DOCTYPE html>
 <!-- Bootpresswp -->
 <!-- http://bootpresswp.anomalous.co.za -->
-<html <?php language_attributes(); ?>>
+<html <?php schema_org_markup(); ?> <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

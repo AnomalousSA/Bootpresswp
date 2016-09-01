@@ -7,11 +7,11 @@
  * @subpackage Bootpresswp
  * @since Bootpresswp 0.1
  *
- * Last Revised: Jul 15, 2016
+ * Last Revised: Aug 26, 2016
  */
 global $childDir;
 ?>
-        <footer class="container">
+        <footer class="container" itemscope itemtype="http://schema.org/WPFooter">
             <div class="row">
                 <hr>
                 <div class="col-sm-6"><p><small>&copy; Anomalous, Bootpresswp</small></p></div>
