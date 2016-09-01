@@ -8,7 +8,7 @@ Best practice is to do all custom development in a Child Theme. The child theme 
 
 View Example Site [bootpresswp.anomalous.co.za](http://bootpresswp.anomalous.co.za)
 
-Version: 1.5.0
+Version: 2.0.0
 
 ## How to Install
 
