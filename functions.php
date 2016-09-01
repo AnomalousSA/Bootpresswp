@@ -291,3 +291,34 @@ add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
+
+function schema_org_markup() {
+    $schema = 'http://schema.org/';
+    // Is single post
+    if ( is_single() ) {
+        $type = "Article";
+    } // Contact form page ID
+    else {
+        if ( is_page( 1 ) ) {
+            $type = 'ContactPage';
+        } // Is author page
+        elseif ( is_author() ) {
+            $type = 'ProfilePage';
+        } // Is search results page
+        elseif ( is_search() ) {
+            $type = 'SearchResultsPage';
+//        } // Is of movie post type
+//        elseif ( is_singular( 'movies' ) ) {
+//            $type = 'Movie';
+//        } // Is of book post type
+//        elseif ( is_singular( 'books' ) ) {
+//            $type = 'Book';
+//        }
+//    elseif ( function_exists(is_woocommerce) && is_woocommerce() ) {
+//      $type = 'Product';
+    } else {
+            $type = 'WebPage';
+        }
+    }
+    echo 'itemscope="itemscope" itemtype="' . $schema . $type . '"';
+}
