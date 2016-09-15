@@ -151,12 +151,12 @@ function bootpresswp_content_nav( $nav_id ) {
 	?>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
-            <ul class="pager">
+            <ul class="pager" itemscope itemtype="http://schema.org/SiteNavigationElement/Pagination">
 		<?php previous_post_link( '<li class="previous">%link</li>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'purecsspress' ) . '</span> %title' ); ?>
 		<?php next_post_link( '<li class="next">%link</li>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'purecsspress' ) . '</span>' ); ?>
             </ul>
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
-            <ul class="pager">
+            <ul class="pager" itemscope itemtype="http://schema.org/SiteNavigationElement/Pagination">
 		<?php if ( get_next_posts_link() ) : ?>
 		<li class="next"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'purecsspress' ) ); ?></li>
 		<?php endif; ?>
@@ -248,18 +248,18 @@ if ( ! function_exists( 'bootstrapwp_comment' ) ) :
                 default :
             ?>
             <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-                <article id="comment-<?php comment_ID(); ?>" class="comment">
+                <article id="comment-<?php comment_ID(); ?>" class="comment" itemscope itemtype="http://schema.org/Comment">
                     <footer>
                         <div class="comment-author vcard">
                                 <?php echo get_avatar( $comment, 40 ); ?>
-                                <?php printf( __( '%s <span class="says">says:</span>', 'bootstrap' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+                                <?php printf( __( '<span itemprop="name">%s</span> <span class="says">says:</span>', 'bootstrap' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
                         </div>
                         <?php if ( $comment->comment_approved == '0' ) : ?>
                         <em><?php _e( 'Your comment is awaiting moderation.', 'bootstrap' ); ?></em>
                         <br />
                         <?php endif; ?>
                         <div class="comment-meta commentmetadata">
-                            <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time pubdate datetime="<?php comment_time( 'c' ); ?>">
+                            <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time pubdate datetime="<?php comment_time( 'c' ); ?>" itemprop="dateCreated">
                             <?php
                                     /* translators: 1: date, 2: time */
                                     printf( __( '%1$s at %2$s', 'bootstrap' ), get_comment_date(), get_comment_time() ); ?>
@@ -268,7 +268,7 @@ if ( ! function_exists( 'bootstrapwp_comment' ) ) :
                             ?>
                         </div>
                     </footer>
-                    <div class="comment-content"><?php comment_text(); ?></div>
+                    <div class="comment-content" itemprop="text"><?php comment_text(); ?></div>
                     <div class="reply">
                             <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
                     </div><!-- .reply -->

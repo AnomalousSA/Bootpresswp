@@ -21,7 +21,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 */
 public function start_lvl( &$output, $depth = 0, $args = array() ) {
 $indent = str_repeat( "\t", $depth );
-$output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu\">\n";
+$output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu\" itemscope itemtype=\"http://schema.org/SiteNavigationElement\">\n";
 }
 
 /**
@@ -73,12 +73,13 @@ $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 $id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
 $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 
-$output .= $indent . '<li' . $id . $value . $class_names .'>';
+$output .= $indent . '<li' . $id . $value . $class_names .' >';
 
 $atts = array();
 $atts['title'] = ! empty( $item->title )	? $item->title	: '';
 $atts['target'] = ! empty( $item->target )	? $item->target	: '';
 $atts['rel'] = ! empty( $item->xfn )	? $item->xfn	: '';
+ $atts['itemprop'] = "url";
 
 // If item has_children add atts to a.
 if ( $args->has_children && $depth === 0 ) {
@@ -185,7 +186,7 @@ $fb_output .= ' class="' . $container_class . '"';
 $fb_output .= '>';
 }
 
-$fb_output .= '<ul';
+$fb_output .= '<ul itemscope itemtype="http://schema.org/SiteNavigationElement"';
 
 if ( $menu_id )
 $fb_output .= ' id="' . $menu_id . '"';

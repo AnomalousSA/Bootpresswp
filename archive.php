@@ -47,6 +47,10 @@ get_header(); ?>
                             <?php the_excerpt();?>
                         </div>
                     <?php endwhile; ?>
+                    <?php
+  if ( function_exists('wp_bootstrap_pagination') )
+    wp_bootstrap_pagination();
+?>
                 </div>
                 <div class="col-sm-4"><?php get_sidebar('post'); ?></div>
             </div>         
