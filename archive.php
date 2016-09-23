@@ -8,7 +8,7 @@
  *
  * Last Revised: Jul 15, 2016
  */
-global $childDir;
+
 get_header(); ?>
 <?php if (have_posts() ) ; ?>
         <div class="container">

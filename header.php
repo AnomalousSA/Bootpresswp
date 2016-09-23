@@ -8,8 +8,6 @@
  *
  * Last Revised: Aug 26, 2016
  */
-global $childDir;
-$childDir = dirname(get_bloginfo('stylesheet_url'));
 ?><!DOCTYPE html>
 <!-- Bootpresswp -->
 <!-- http://bootpresswp.anomalous.co.za -->
@@ -24,8 +22,8 @@ $childDir = dirname(get_bloginfo('stylesheet_url'));
     <link href="<?php bloginfo('pingback_url');?>" rel="pingback"/>
     <?php wp_head(); ?>
     <!--[if lt IE 9]>
-        <script src="<?php print $childDir; ?>/assets/js/vendor/html5shiv.min.js"></script>
-        <script src="<?php print $childDir; ?>/assets/js/vendor/respond.min.js"></script>
+        <script src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/html5shiv.min.js"></script>
+        <script src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/respond.min.js"></script>
     <![endif]-->
 </head>
 <body <?php body_class(''); ?> itemscope itemtype="http://schema.org/Blog">

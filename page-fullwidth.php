@@ -9,7 +9,6 @@
  *
  * Last Revised: Aug 26, 2016
  */
-global $childDir;
 get_header(); ?>
         <article class="container" itemscope itemtype="http://schema.org/BlogPosting">
             <meta itemscope itemprop="mainEntityOfPage" itemType="https://schema.org/WebPage" itemid="<?php the_permalink();?>">

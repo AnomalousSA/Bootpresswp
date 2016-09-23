@@ -32,7 +32,7 @@
 	<?php
 		elseif ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<p class="nocomments"><?php _e( 'Comments are closed.', 'purecsspress' ); ?></p>
+		<p class="nocomments"><?php _e( 'Comments are closed.', 'bootpresswp' ); ?></p>
 	<?php endif; ?>
                 <div class="pagination">
             <?php paginate_comments_links(); ?>

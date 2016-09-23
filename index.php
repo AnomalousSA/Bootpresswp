@@ -9,7 +9,6 @@
  *
  * Last Revised: Jul 15, 2016
  */
-global $childDir;
 get_header(); ?>
         <article class="container" itemscope itemtype="http://schema.org/BlogPosting">
             <meta itemscope itemprop="mainEntityOfPage" itemType="https://schema.org/WebPage" itemid="<?php the_permalink();?>">
@@ -20,6 +19,11 @@ get_header(); ?>
                     <h1><?php the_title();?></h1>
                     <?php get_template_part('template-parts/organisms/post', 'meta');?>
                     <div class="post-content" itemprop="articleBody">
+                    <?php
+                        if ( has_post_thumbnail() ) { 
+                        the_post_thumbnail();
+                        }
+                    ?>
                     <?php the_content(); ?>
                     </div>
                     <?php the_tags( '<p>Tags: ', ', ', '</p>'); ?>

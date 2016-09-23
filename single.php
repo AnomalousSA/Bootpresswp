@@ -18,7 +18,11 @@ get_header(); ?>
                 <h1><?php the_title(); ?></h1>
                 
                 <?php get_template_part('template-parts/organisms/post', 'meta');?>
-                
+                <?php
+                    if ( has_post_thumbnail() ) { 
+                    the_post_thumbnail();
+                    }
+                ?>
                 <div class="post-content" itemprop="articleBody">
                     <?php the_content(); ?>
                 </div>

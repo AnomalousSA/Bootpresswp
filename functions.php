@@ -79,8 +79,7 @@ require_once('includes/wp_bootstrap_navwalker.php');
 require_once('includes/wp_bootstrap_pagination.php');
 // Bootstrap breadcrumbs
 require_once('includes/wp_bootstrap_breadcrumbs.php');
-// Add Shortcodes
-require_once('includes/wp_bootstrap_shortcodes.php');
+
 
 
 function custom_bootpresswp_loader() {
@@ -131,8 +130,8 @@ if ( ! function_exists( 'bootpresswp_menus' ) ) {
 function bootpresswp_menus() {
 
     $locations = array(
-            'main-menu' => __( 'Main Header Menu', 'text_domain' ),
-            'footer-menu' => __( 'Footer Menu', 'text_domain' ),
+            'main-menu' => __( 'Main Header Menu', 'bootpresswp' ),
+            'footer-menu' => __( 'Footer Menu', 'bootpresswp' ),
     );
     register_nav_menus( $locations );
 
@@ -152,17 +151,17 @@ function bootpresswp_content_nav( $nav_id ) {
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
             <ul class="pager" itemscope itemtype="http://schema.org/SiteNavigationElement/Pagination">
-		<?php previous_post_link( '<li class="previous">%link</li>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'purecsspress' ) . '</span> %title' ); ?>
-		<?php next_post_link( '<li class="next">%link</li>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'purecsspress' ) . '</span>' ); ?>
+		<?php previous_post_link( '<li class="previous">%link</li>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'bootpresswp' ) . '</span> %title' ); ?>
+		<?php next_post_link( '<li class="next">%link</li>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'bootpresswp' ) . '</span>' ); ?>
             </ul>
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
             <ul class="pager" itemscope itemtype="http://schema.org/SiteNavigationElement/Pagination">
 		<?php if ( get_next_posts_link() ) : ?>
-		<li class="next"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'purecsspress' ) ); ?></li>
+		<li class="next"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'bootpresswp' ) ); ?></li>
 		<?php endif; ?>
 
 		<?php if ( get_previous_posts_link() ) : ?>
-		<li class="previous"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'purecsspress' ) ); ?></li>
+		<li class="previous"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'bootpresswp' ) ); ?></li>
 		<?php endif; ?>
             </ul>
 	<?php endif; ?>
@@ -181,11 +180,11 @@ endif; // bootstrapwp_content_nav
         $html5    = current_theme_supports( 'html5', 'comment-form' ) ? 1 : 0;
         
         $fields   =  array(
-            'author' => '<div class="form-group comment-form-author">' . '<label for="author">' . __( 'Name' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
+            'author' => '<div class="form-group comment-form-author">' . '<label for="author">' . __( 'Name', 'bootpresswp' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
                         '<input class="form-control" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></div>',
-            'email'  => '<div class="form-group comment-form-email"><label for="email">' . __( 'Email' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
+            'email'  => '<div class="form-group comment-form-email"><label for="email">' . __( 'Email', 'bootpresswp' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
                         '<input class="form-control" id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></div>',
-            'url'    => '<div class="form-group comment-form-url"><label for="url">' . __( 'Website' ) . '</label> ' .
+            'url'    => '<div class="form-group comment-form-url"><label for="url">' . __( 'Website', 'bootpresswp' ) . '</label> ' .
                         '<input class="form-control" id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></div>'        
         );
         
@@ -195,7 +194,7 @@ endif; // bootstrapwp_content_nav
         add_filter( 'comment_form_defaults', 'bootpresswp_comment_form' );
     function bootpresswp_comment_form( $args ) {
         $args['comment_field'] = '<div class="form-group comment-form-comment">
-                <label for="comment">' . _x( 'Comment', 'noun' ) . '</label> 
+                <label for="comment">' . _x( 'Comment', 'noun','bootpresswp' ) . '</label> 
                 <textarea class="form-control" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
             </div>';
         $args['class_submit'] = 'btn btn-default'; // since WP 4.1
@@ -205,20 +204,20 @@ endif; // bootstrapwp_content_nav
     
         add_action('comment_form', 'bootpresswp_comment_button' );
     function bootpresswp_comment_button() {
-        echo '<button class="btn btn-default" type="submit">' . __( 'Submit' ) . '</button>';
+        echo '<button class="btn btn-default" type="submit">' . __( 'Submit', 'bootpresswp'  ) . '</button>';
     }
 
 
 if ( ! function_exists( 'bootpresswp_posted_on' ) ) :
   
   function bootpresswp_posted_on() {
-    printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'bootstrap' ),
+    printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'bootpresswp' ),
       esc_url( get_permalink() ),
       esc_attr( get_the_time() ),
       esc_attr( get_the_date( 'c' ) ),
       esc_html( get_the_date() ),
       esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-      esc_attr( sprintf( __( 'View all posts by %s', 'bootstrap' ), get_the_author() ) ),
+      esc_attr( sprintf( __( 'View all posts by %s', 'bootpresswp' ), get_the_author() ) ),
       esc_html( get_the_author() )
     );
   }
@@ -242,7 +241,7 @@ if ( ! function_exists( 'bootstrapwp_comment' ) ) :
                     case 'trackback' :
             ?>
             <li class="post pingback">
-                <p><?php _e( 'Pingback:', 'bootstrap' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'bootstrap' ), ' ' ); ?></p>
+                <p><?php _e( 'Pingback:', 'bootpresswp' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'bootpresswp' ), ' ' ); ?></p>
             <?php
                         break;
                 default :
@@ -252,19 +251,19 @@ if ( ! function_exists( 'bootstrapwp_comment' ) ) :
                     <footer>
                         <div class="comment-author vcard">
                                 <?php echo get_avatar( $comment, 40 ); ?>
-                                <?php printf( __( '<span itemprop="name">%s</span> <span class="says">says:</span>', 'bootstrap' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+                                <?php printf( __( '<span itemprop="name">%s</span> <span class="says">says:</span>', 'bootpresswp' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
                         </div>
                         <?php if ( $comment->comment_approved == '0' ) : ?>
-                        <em><?php _e( 'Your comment is awaiting moderation.', 'bootstrap' ); ?></em>
+                        <em><?php _e( 'Your comment is awaiting moderation.', 'bootpresswp' ); ?></em>
                         <br />
                         <?php endif; ?>
                         <div class="comment-meta commentmetadata">
                             <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time pubdate datetime="<?php comment_time( 'c' ); ?>" itemprop="dateCreated">
                             <?php
                                     /* translators: 1: date, 2: time */
-                                    printf( __( '%1$s at %2$s', 'bootstrap' ), get_comment_date(), get_comment_time() ); ?>
+                                    printf( __( '%1$s at %2$s', 'bootpresswp' ), get_comment_date(), get_comment_time() ); ?>
                             </time></a>
-                            <?php edit_comment_link( __( '(Edit)', 'bootstrap' ), ' ' );
+                            <?php edit_comment_link( __( '(Edit)', 'bootpresswp' ), ' ' );
                             ?>
                         </div>
                     </footer>
